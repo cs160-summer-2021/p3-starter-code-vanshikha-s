@@ -12,3 +12,4 @@ def info(request):
 
 def new_interaction(request):
     return render(request, 'coloring/comparison-alert.html')
+

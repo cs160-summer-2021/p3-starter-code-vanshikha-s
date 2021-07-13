@@ -7,4 +7,5 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('info/', views.info, name='info'),
     path('new/interaction/', views.new_interaction, name='new_interaction'),
+   
 ]
