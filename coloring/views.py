@@ -21,3 +21,6 @@ def template_options(request):
 
 def do_not_disturb(request):
     return render(request, 'coloring/do_not_disturb.html')
+
+def done(request):
+    return render(request, 'coloring/done.html')

@@ -9,5 +9,7 @@ urlpatterns = [
     path('new/interaction/', views.new_interaction, name='new_interaction'),
     path('template/options/', views.template_options, name='template_options'),
     path('do/not/disturb/', views.do_not_disturb, name='do_not_disturb'),
+    path('done/', views.done, name='done'),
+
    
 ]
