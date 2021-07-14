@@ -57,7 +57,7 @@
 	}
 
   .bottom {
-		padding: 60px;
+		padding: 50px;
 		text-align: center;
 		background: #8fecec;
 		color: white;
@@ -84,6 +84,25 @@
     color: green;
 }
 
+.fa-eraser:hover {
+    color: green;
+}
+
+.fa-eraser {
+    margin-left: -40px;
+    margin-top: -40px;
+}
+.fa-undo {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.fa-redo {
+  margin-left: 60px;
+    margin-top: -40px;
+}
+
+
 .button1 {
   background-color: #57029c; /* purple */
   border: none;
@@ -93,7 +112,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
-  margin: 6px 160px;
+  margin: 6px 100px;
   cursor: pointer;
   margin-left: 750px;
   border-radius: 50px;
@@ -108,12 +127,16 @@
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
-  margin: 6px 160px;
+  margin: 6px 100px;
   cursor: pointer;
   margin-left: 750px;
   border-radius: 50px;
   box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
 }
+.button2:hover {
+    color: rgb(113, 252, 113);
+}
+
 
 	</style>
 
@@ -211,6 +234,14 @@
    <div id="color-palette"></div>
 	<canvas id="myCanvas" width="750px" height="750px"></canvas>
   <br>
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
   <!--Paint bucket icon -->
   <span style="font-size: 6em; color: black;padding: 50px; padding-left: 100px;">
@@ -241,16 +272,28 @@
     <br>
     <br>
 
-    <br>
-    <br>
-    <br>
-    <br>
-
+     
 
     <div class="bottom">
-      <button2 class="button2">Save</i></h6></button2>
-      <button1 onclick="location.href='/coloring/index'" class="button1 button3">Done </i></h6></button1>
+      <h1> Take a deep breathe and color!</h1>
+      <!--eraser-->
+	  <span style="font-size: 3em; color: black;padding: 10px; ">
+      <i class="fas fa-eraser"></i>
+      </span>
+
+      <!--undo buttons-->
+	  <span style="font-size: 3em; color: black;padding: 10px; ">
+      <i class="fas fa-undo"></i>
+      </span>
+
       
+      <!--redo buttons-->
+	  <span style="font-size: 3em; color: black;padding: 10px; ">
+      <i class="fas fa-redo"></i>
+      </span>
+
+      <button2 class="button2">Save</i></h6></button2>
+      <button1 onclick="location.href='/coloring/save/reminder/one/'" class="button1">Done </i></h6></button1>
      </div>
 	
 </body>
