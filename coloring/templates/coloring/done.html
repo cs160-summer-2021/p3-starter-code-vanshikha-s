@@ -1,0 +1,214 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+	<style type="text/css">
+
+
+	body {
+		 font-family: 'Halvetica', sans-serif;
+		 margin: 0;
+		 background-color: #B2F3F3;
+	}
+
+	.header {
+		padding: 60px;
+		text-align: center;
+		background: #059DC0;
+		color: white;
+		font-size: 30px;
+		box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+	}
+	.content {
+		padding:20px;
+		text-align: center;
+	}
+
+
+  * {
+  box-sizing: border-box;
+}
+
+.box {
+  padding-left: 200px;
+  width: 80%;
+  padding: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.boxpadding {border-radius: 100px;box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);}
+
+
+.button1 {
+  background-color: #57029c; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 6px 160px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+}
+
+.button2 {
+  background-color: #059DC0; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 6px 160px;
+  cursor: pointer;
+  
+}
+
+.button4 {border-radius: 50px;box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);}
+
+#portfolio {
+  font-size: 50px;
+
+}
+
+input.larger {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+        margin-left: -70px;
+      }
+
+      input.larger2 {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+        margin-left: -45px;
+      }
+
+      input.larger1 {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+        margin-left: -240px;
+      }
+
+
+      .fa-share-alt:hover {
+    color: green;
+}
+
+.checked {
+  color: rgb(255, 186, 58);
+}
+
+.button1:hover {
+    color: rgb(59, 199, 113);
+}
+
+hr {
+    border: none;
+    height: 8px;
+    /* Set the hr color */
+    color: rgb(255, 255, 255); /* old IE */
+    background-color: rgb(255, 255, 255); /* Modern Browsers */
+}
+
+
+
+	</style>
+
+	<script type="text/javascript">
+	
+	</script>
+</head>
+<body>
+
+	<div class="header">
+
+		<h1>Great Work!</h1>
+    <p><i>I told the artist that my art was better. They got the picture. <br> -A Competitive Capitalist Hue Man</i> </p>
+	  </div>
+	  <div class="content">
+      <h1>Save it for posterity</h1>
+      <button1 class="button1">Save it on Phone</button1>
+      <button1 class="button1">Set as Wallpaper</button1>
+     
+
+      <br>
+      <br>
+      <br>
+		
+		
+      <div class="clearfix">
+        <div class="box boxpadding" style="background-color:#059DC0;color: white ; font-size: 20px; ">
+        <input type="checkbox" class="larger2" name="portfolio" value="Add" style = "font-size: 100px ; ">
+        <label for="portfolio" style = "font-size: 40px; padding:10px"> Add to Hue-Man Healing's Portfolio</label>
+
+        <br>
+        
+        <input type="checkbox" class="larger1" name="portfolio" value="Add" style = "font-size: 150px">
+        <label for="portfolio" style = "font-size: 40px"> Visible to Public</label>
+
+        <br>
+        
+        <input type="checkbox" class="larger" name="portfolio" value="Add" style = "font-size: 150px">
+        <label for="portfolio" style = "font-size: 40px"> Only to Hue-Man Healers</label>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+
+        <!--Social Media share icon -->
+	  <span style="font-size: 6em; color: black;padding: 50px; ">
+      <i class="fas fa-share-alt" style = "font-size: 70px"> Share on Social Media</i>
+      </span>
+        <br>
+        <br>
+
+        <h1>Leave Us Feedback</h1>
+        <span class="fa fa-star checked"></span> &nbsp;
+        <span class="fa fa-star checked"></span> &nbsp;
+        <span class="fa fa-star checked"></span> &nbsp;
+        <span class="fa fa-star checked"></span> &nbsp;
+        <span class="fa fa-star checked"></span>
+        
+        <br>
+        <br>
+        
+        <hr>
+        <br>
+        
+
+        <button1 onclick="location.href='/coloring/index/'" class="button1">Start New Project</button1>
+        <br>
+        <br>
+        <h1> **Exiting the app will remove Do Not Disturb settings</h1>
+       
+        <button1 onclick="location.href='/coloring/exit/message/'"class="button1">Exit The App</button1>
+
+   
+	 
+      
+</body>
+</html>
