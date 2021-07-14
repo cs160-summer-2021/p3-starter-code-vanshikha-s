@@ -13,10 +13,10 @@ def info(request):
     return render(request, 'coloring/info.html')
 
 
-def new_interaction(request):
+def new_interaction_one(request):
     return render(request, 'coloring/new_interaction_one.html')
 
-def new_interaction(request):
+def new_interaction_two(request):
     return render(request, 'coloring/new_interaction_two.html')
 
 def template_options(request):
