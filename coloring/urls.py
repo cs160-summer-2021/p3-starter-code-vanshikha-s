@@ -12,8 +12,8 @@ urlpatterns = [
     path('do/not/disturb/', views.do_not_disturb, name='do_not_disturb'),
     path('done/', views.done, name='done'),
     path('exit/message/', views.exit_message, name='exit_message'),
-    path('save/reminder/one', views.save_reminder_one, name='save_reminder_one'),
-    path('save/reminder/two', views.save_reminder_two, name='save_reminder_two'),
+    path('save/reminder/one/', views.save_reminder_one, name='save_reminder_one'),
+    path('save/reminder/two/', views.save_reminder_two, name='save_reminder_two'),
    
 
    
