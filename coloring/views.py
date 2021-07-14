@@ -24,3 +24,6 @@ def do_not_disturb(request):
 
 def done(request):
     return render(request, 'coloring/done.html')
+
+def exit_message(request):
+    return render(request, 'coloring/exit_message.html')

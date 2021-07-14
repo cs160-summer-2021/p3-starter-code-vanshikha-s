@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
 	
   <!----<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">-->
   
@@ -16,8 +18,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Poiret+One&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
-  <style>
+
+  <style type="text/css">
     body {
 		 font-family: 'Inder', sans-serif;
 		 margin: 0;
@@ -283,12 +289,14 @@ ol, li {
 
 <body>
   <div class="header">
-		<h1>Hue-Man Healing</h1>
-		<p><i> Destress when in dyer need</i> </p>
+      <!--home icon -->
+      <li>  <span style="font-size: 2em; color: black;padding-right: 747px; ">
+        <a href="/coloring/index/" ><i class="fas fa-home"></i></a>
+        </span> </li>
+
+		<h1>Templates</h1>
 	  </div>
 	
-
-	  </div>
         <div class="container-fluid my-container">
                  <div class="col" style="flex-grow: 1; text-align: center">
                     Flowers

@@ -10,6 +10,8 @@ urlpatterns = [
     path('template/options/', views.template_options, name='template_options'),
     path('do/not/disturb/', views.do_not_disturb, name='do_not_disturb'),
     path('done/', views.done, name='done'),
+    path('exit/message/', views.exit_message, name='exit_message'),
+   
 
    
 ]
