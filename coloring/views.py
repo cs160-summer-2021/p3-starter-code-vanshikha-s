@@ -14,7 +14,10 @@ def info(request):
 
 
 def new_interaction(request):
-    return render(request, 'coloring/new_interaction.html')
+    return render(request, 'coloring/new_interaction_one.html')
+
+def new_interaction(request):
+    return render(request, 'coloring/new_interaction_two.html')
 
 def template_options(request):
     return render(request, 'coloring/template_options.html')
