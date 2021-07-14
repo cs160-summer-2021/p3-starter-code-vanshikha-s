@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+	<style type="text/css">
+
+
+	body {
+		 font-family: 'Halvetica', sans-serif;
+		 margin: 0;
+		 background-color: #B2F3F3;
+	}
+
+	.header {
+		padding: 60px;
+		text-align: center;
+		background: #059DC0;
+		color: white;
+		font-size: 30px;
+		box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+	}
+	.content {
+		padding:20px;
+		text-align: center;
+	}
+
+
+  * {
+  box-sizing: border-box;
+}
+
+.box {
+  padding-left: 200px;
+  width: 80%;
+  padding: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.boxpadding {border-radius: 100px;box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);}
+
+
+.button1 {
+  background-color: #059DC0; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 6px 160px;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: #059DC0; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 6px 160px;
+  cursor: pointer;
+}
+
+.button3 {border-radius: 50px;box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);}
+.button4 {border-radius: 50px;box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);}
+
+
+
+
+	</style>
+
+	<script type="text/javascript">
+	
+	</script>
+</head>
+<body>
+
+	<div class="header">
+     <!--info icon -->
+	   <li>  <span style="font-size: 2em; color: black;padding-right: 747px; ">
+      <a href="/coloring/index/" ><i class="fas fa-home"></i></a>
+      </span> </li>
+
+		<h1>Hue Man Healing</h1>
+    <p><i>Destress when in dyer need</i> </p>
+	  </div>
+	  <div class="content">
+     
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+		
+		
+      <div class="clearfix">
+        <div class="box boxpadding" style="background-color:#059DC0;color: white ; font-size: 20px; ">
+          <button2 class="button2 button4">5 mins </button2>
+          <button2 class="button2 button4">10 mins </button2>
+          <button2 class="button2 button4">15 mins </button2>
+          <button2 class="button2 button4">20 mins </button2>
+          <button2 class="button2 button4">25 mins </button2>
+          <button2 class="button2 button4">30 mins </button2>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+        <button1 onclick="location.href='/coloring/index/'" class="button1 button3">Start Jour Journey </button1>
+
+   
+	 
+      
+</body>
+</html>
