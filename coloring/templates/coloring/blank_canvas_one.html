@@ -11,290 +11,266 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
 	<style type="text/css">
-
-
-		#color-palette {
-			width: 300px;
-			background-color: #f1f1f1;
-			display: flex;
-			flex-wrap: wrap;
-			position: absolute;
-			top: 0;
-      margin-left: 100px;
-      margin-top: 100px;
-		}
-
-		.swatch {
-			width: 24px;
-			height: 24px;
-			-moz-border-radius: 12px;
-			-webkit-border-radius: 12px;
-			border-radius: 12px;
-			margin: 3px;
-		}
-
-		#myCanvas {
-			padding-left: 0;
-		    padding-right: 0;
-		    margin-left: auto;
-		    margin-right: auto;
-		    display: block;
-		}
-
-    body {
-		 font-family: 'Halvetica', sans-serif;
-		 margin: 0;
-		 background-color: #ffffff;
-	}
-
-	.header {
-		padding: 60px;
-		text-align: center;
-		background: #8fecec;
-		color: white;
-		font-size: 30px;
-		box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
-	}
-
-  .bottom {
-		padding: 50px;
-		text-align: center;
-		background: #8fecec;
-		color: white;
-		font-size: 30px;
-		box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
-	}
-
-
-
-  .fa-fill-drip:hover {
-    color: green;
+body {
+  background: #384047;
+  font-family: sans-serif;
 }
 
-.fa-paint-brush:hover {
-    color: green;
-}
-.fa-pencil-alt:hover {
-    color: green;
-}
-.fa-spray-can:hover {
-    color: green;
-}
-.fa-info-circle:hover {
-    color: green;
+canvas {
+  background: #fff;
+  display: block;
+  margin: 50px auto 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 0 0 #222;
+  cursor: url(../img/cursor.png), crosshair;
 }
 
-.fa-eraser:hover {
-    color: green;
+.controls {
+  min-height: 60px;
+  margin: 0 auto;
+  width: 600px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.fa-eraser {
-    margin-left: -40px;
-    margin-top: -40px;
-}
-.fa-undo {
-    margin-left: 50px;
-    margin-top: -40px;
-}
-
-.fa-redo {
-  margin-left: 60px;
-    margin-top: -40px;
-}
-
-
-.button1 {
-  background-color: #57029c; /* purple */
-  border: none;
-  color: white;
-  padding: 30px;
+ul {
+  list-style: none;
+  margin: 0;
+  float: left;
+  padding: 10px 0 20px;
+  width: 100%;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 6px 100px;
-  cursor: pointer;
-  margin-left: 750px;
-  border-radius: 50px;
-  box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
 }
-.button2 {
-  background-color: #03728B; /* purple */
+
+ul li,
+#newColor {
+  display: block;
+  height: 54px;
+  width: 54px;
+  border-radius: 60px;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 3px 0 0 #222;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 5px 10px;
+}
+
+.red {
+  background: #fc4c4f;
+}
+
+.blue {
+  background: #4fa3fc;
+}
+
+.yellow {
+  background: #ECD13F;
+}
+
+.selected {
+  border: 7px solid #fff;
+  width: 40px;
+  height: 40px;
+}
+
+button {
+  background: #68B25B;
+  box-shadow: 0 3px 0 0 #6A845F;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  text-shadow: 0 1px #6A845F;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+#revealColorSelect {
   border: none;
-  color: white;
-  padding: 30px;
-  text-align: center;
-  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 5px 20px;
+  width: 160px;
+}
+
+
+/* New Color Palette */
+
+#colorSelect {
+  background: #fff;
+  border-radius: 5px;
+  clear: both;
+  margin: 20px auto 0;
+  padding: 10px;
+  width: 305px;
+  position: relative;
+  display: none;
+}
+
+#colorSelect:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+#newColor {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  box-shadow: none;
+  float: left;
+  border: none;
+  margin: 10px 20px 20px 10px;
+}
+
+.sliders p {
+  margin: 8px 0;
+  vertical-align: middle;
+}
+
+.sliders label {
   display: inline-block;
-  font-size: 30px;
-  margin: 6px 100px;
-  cursor: pointer;
-  margin-left: 750px;
-  border-radius: 50px;
-  box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+  margin: 0 10px 0 0;
+  width: 35px;
+  font-size: 14px;
+  color: #6D574E;
 }
-.button2:hover {
-    color: rgb(113, 252, 113);
+
+.sliders input {
+  position: relative;
+  top: 2px;
 }
+
+#colorSelect button {
+  border: none;
+  border-top: 1px solid #6A845F;
+  border-radius: 0 0 5px 5px;
+  clear: both;
+  margin: 10px -10px -7px;
+  padding: 5px 10px;
+  width: 325px;
+}
+
+
+
 
 
 	</style>
 
 	<script type="text/javascript" canvas="canvas">
-		window.onload = function() {
-			var canvas = document.getElementById('myCanvas');
 
-			// coloring page
-			var mandala = {
-				item: null,
-				lastClicked: null,
-				filePath: ''
-			};
 
-			// color palette
-			var cp = {
-				history: ["#000000"], // black selected by default
-				options: [],
-				$container: $('#color-palette')
-			}
+var color = $(".selected").css("background-color");
+var $canvas = $("canvas");
+var context = $canvas[0].getContext("2d");
+var lastEvent;
+var mouseDown = false;
 
-			function myCustomInteraction() {
-				var tool = new paper.Tool();
+//When clicking on control list items
+$(".controls").on("click", "li", function() {
+  //Deselect sibling elements
+  $(this).siblings().removeClass("selected");
+  //Select clicked element
+  $(this).addClass("selected");
+  //cache current color
+  color = $(this).css("background-color");
+});
 
-				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
-				    if (hit) {
-				    		// Color pallette keeps track of the full history of colors, though we
-				    		// only color in with the most-recent color.
-				        hit.item.fillColor = cp.history[cp.history.length - 1];
-				    }
-				}
-			}
+//When "New Color" is pressed
+$("#revealColorSelect").click(function() {
+  //Show color select or hide the color select
+  changeColor();
+  $("#colorSelect").toggle();
+});
 
-			// create a color palette with the given colors
-			function createColorPalette(colors){
+//update the new color span
+function changeColor() {
+  var r = $("#red").val();
+  var g = $("#green").val();
+  var b = $("#blue").val();
+  $("#newColor").css("background-color", "rgb(" + r + "," + g + ", " + b + ")");
+}
 
-				// create a swatch for each color
-				for (var i = colors.length - 1; i >= 0; i--) {
-					var $swatch = $("<div>").css("background-color", colors[i])
-									   .addClass("swatch");
-					$swatch.click(function(){
-						// add color to the color palette history
-					  	cp.history.push($(this).css("background-color"));
-					});
-					cp.$container.append($swatch);
-				}
-			}
+//When color sliders change
+$("input[type=range]").change(changeColor);
 
-			// loads a set of colors from a json to create a color palette
-			function getColorsCreatePalette(){
-				cp.$container.html(" ");
-				$.getJSON('/static/coloring/vendors/material/material-colors.json', function(colors){
-					var keys = Object.keys(colors);
-					for (var i = keys.length - 1; i >= 0; i--) {
-						cp.options.push(colors[keys[i]][500]);
-					}
-					createColorPalette(cp.options);
-				});
-			}
+//When "Add Color" is pressed
+$("#addNewColor").click(function() {
+  //Append the color to the controls ul
+  var $newColor = $("<li></li>");
+  $newColor.css("background-color", $("#newColor").css("background-color"));
+  $(".controls ul").append($newColor);
+  //Select the new color
+  $newColor.click();
+});
 
-			function init(custom){
-				paper.setup(canvas);
-				getColorsCreatePalette();
-
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-freepik"];
-				    paper.project.insertLayer(0,mandala.item);
-
-				    if (custom) {
-				    	myCustomInteraction();
-				    } else {
-				    	myGradientInteraction();
-				    }
-
-				});
-			}
-
-			// Set up the mandala interactivity.
-			init(true);
-		}
+//On mouse events on the canvas
+$canvas.mousedown(function(e) {
+  lastEvent = e;
+  mouseDown = true;
+}).mousemove(function(e) {
+  //Draw lines
+  if (mouseDown) {
+    context.beginPath();
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = color;
+    context.stroke();
+    lastEvent = e;
+  }
+}).mouseup(function() {
+  mouseDown = false;
+}).mouseleave(function() {
+  $canvas.mouseup();
+});
+	
 	</script>
 </head>
 <body>
 
-  <div class="header">
-    <!--home icon -->
-    <li>  <span style="font-size: 2em; color: black;padding-left: 752px; ">
-     <a href="/coloring/index/" ><i class="fas fa-home"></i></a>
-     </span> </li>
-   </div>
+	<canvas width="600" height="400"></canvas>
+  <div class="controls">
+    <ul>
+      <li class="red selected"></li>
+      <li class="blue"></li>
+      <li class="yellow"></li>
+    </ul>
+    <button id="revealColorSelect">New Color</button>
+    <div id="colorSelect">
+      <span id="newColor"></span>
+      <div class="sliders">
+        <p>
+          <label for="red">Red</label>
+          <input id="red" name="red" type="range" min=0 max=255 value=0>
+        </p>
+        <p>
+          <label for="green">Green</label>
+          <input id="green" name="green" type="range" min=0 max=255 value=0>
+        </p>
+        <p>
+          <label for="blue">Blue</label>
+          <input id="blue" name="blue" type="range" min=0 max=255 value=0>
+        </p>
+      </div>
+      <div>
+        <button id="addNewColor">Add Color</button>
+      </div>
+    </div>
+  </div>
 
-   <br>
-   <br>
-   <div id="color-palette"></div>
-	<canvas id="myCanvas" width="750px" height="750px"></canvas>
-  <br>
-  <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  <!--Paint bucket icon -->
-  <span style="font-size: 6em; color: black;padding: 50px; padding-left: 100px;">
-		<i class="fas fa-fill-drip"></i>
-	  </span>
-
-	  <!--Paint brush icon -->
-	  <span style="font-size: 6em; color: black;padding: 50px; ">
-		<i class="fas fa-paint-brush"></i>
-	  </span>
-
-	  <!--pencil icon -->
-	  <span style="font-size: 6em; color: black; padding: 50px; ">
-		<i class="fas fa-pencil-alt"></i>
-	  </span>
-
-	  <!--spray can icon -->
-	  <span style="font-size: 6em; color: black;padding: 50px; ">
-		<i class="fas fa-spray-can"></i>
-	  </span>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-     
-
-    <div class="bottom">
-      <h1> Take a deep breathe and color!</h1>
-      <!--eraser-->
-	  <span style="font-size: 3em; color: black;padding: 10px; ">
-      <i class="fas fa-eraser"></i>
-      </span>
-
-      <!--undo buttons-->
-	  <span style="font-size: 3em; color: black;padding: 10px; ">
-      <i class="fas fa-undo"></i>
-      </span>
-
-      
-      <!--redo buttons-->
-	  <span style="font-size: 3em; color: black;padding: 10px; ">
-      <i class="fas fa-redo"></i>
-      </span>
-
-      <button2 class="button2">Save</i></h6></button2>
-      <button1 onclick="location.href='/coloring/save/reminder/one/'" class="button1">Done </i></h6></button1>
-     </div>
-	
+  
+    
 </body>
 </html>
