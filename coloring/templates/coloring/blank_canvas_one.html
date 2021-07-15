@@ -62,6 +62,14 @@
     color: green;
 }
 
+.fa-undo:hover {
+    color: green;
+}
+
+.fa-redo:hover {
+    color: green;
+}
+
 .fa-eraser {
     margin-left: -40px;
     margin-top: -40px;
@@ -161,25 +169,25 @@ function dot(ctx,x,y,size) {
 } 
 
 // Clear the canvas context using the canvas width and height
-function clearCanvas(canvas,ctx) {
+function eraseCanvas(canvas,ctx) {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 // Keep track of the mouse button being pressed and draw a dot at current location
-function canvas_mouseDown() {
+function mouseDown_c() {
 	mouseDown=1;
 	dot(ctx,mouseX,mouseY,12);
 }
 
 // Keep track of the mouse button being released
-function canvas_mouseUp() {
+function mouseUp_c() {
 	mouseDown=0;
 }
 
 // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-function canvas_mouseMove(e) { 
+function mouseMove_c(e) { 
 	// Update the mouse co-ordinates when moved
-	getMousePos(e);
+	mousePosition(e);
 
 	// Draw a dot if the mouse button is currently being pressed
 	if (mouseDown==1) {
@@ -188,7 +196,7 @@ function canvas_mouseMove(e) {
 }
 
 // Get the current mouse position relative to the top-left of the canvas
-function getMousePos(e) {
+function mousePosition(e) {
 	if (!e)
 		var e = event;
 
@@ -203,7 +211,7 @@ function getMousePos(e) {
  }
 
 // Draw something when a touch start is detected
-function canvas_touchStart() {
+function touchStart_c() {
 	// Update the touch co-ordinates
 	getTouchPos();
 
@@ -214,7 +222,7 @@ function canvas_touchStart() {
 }
 
 // Draw something and prevent the default scrolling when touch movement is detected
-function canvas_touchMove(e) { 
+function touchMove_c(e) { 
 	// Update the touch co-ordinates
 	getTouchPos(e);
 
@@ -251,13 +259,13 @@ function init() {
 	// Check that we have a valid context to draw on/with before adding event handlers
 	if (ctx) {
 		// React to mouse events on the canvas, and mouseup on the entire document
-		canvas.addEventListener('mousedown', canvas_mouseDown, false);
-		canvas.addEventListener('mousemove', canvas_mouseMove, false);
-		window.addEventListener('mouseup', canvas_mouseUp, false);
+		canvas.addEventListener('mousedown', mouseDown_c, false);
+		canvas.addEventListener('mousemove', mouseMove_c, false);
+		window.addEventListener('mouseup', mouseUp_c, false);
 
 		// React to touch events on the canvas
-		canvas.addEventListener('touchstart', canvas_touchStart, false);
-		canvas.addEventListener('touchmove', canvas_touchMove, false);
+		canvas.addEventListener('touchstart', touchStart_c, false);
+		canvas.addEventListener('touchmove', touchMove_c, false);
 	}
 }
 	</script>
@@ -269,7 +277,9 @@ function init() {
     <li>  <span style="font-size: 2em; color: black;padding-left: 742px; ">
      <a href="/coloring/index/" ><i class="fas fa-home"></i></a>
      </span> </li>
-	<h1>Take a deep breathe and draw your heart out!</h1>
+
+	 <img src="/static/coloring/images/color.png/ alt="Mountain" style="width:300px">
+	<p>Take a deep breathe and draw your heart out!</p>
    </div>
 
    <br>
@@ -328,7 +338,7 @@ function init() {
 
     <div class="bottom">
       <h1> Count...1...2...3...Breathe!</h1>
-	  <input type="submit" value="Erase All" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+	  <input type="submit" value="Erase All" id="clearbutton" onclick="eraseCanvas(canvas,ctx);">
      
 
       <!--undo buttons-->
