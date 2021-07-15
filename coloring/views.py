@@ -31,8 +31,5 @@ def done(request):
 def exit_message(request):
     return render(request, 'coloring/exit_message.html')
 
-def save_reminder_one(request):
-    return render(request, 'coloring/save_reminder_one.html')
-
-def save_reminder_two(request):
-    return render(request, 'coloring/save_reminder_two.html')
+def blank_canvas_one(request):
+    return render(request, 'coloring/blank_canvas_one.html')

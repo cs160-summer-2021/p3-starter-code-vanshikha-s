@@ -113,6 +113,7 @@
     .mySlides-8{
       display: none;
     }
+    
   </style>
  
 </head>
@@ -120,8 +121,8 @@
 <body>
   <div class="header">
   <li> <span style="font-size: 2em; color: black;padding-left: 830px; "> <a href="/coloring/index/" ><i class="fas fa-home"></i></a> </span> </li>
-  <h1>Template Options</h1>
-    <h6><i>Drawing? Pssh. I have no wish to draw blood. <br> — A frequent Template Hue-man.</i></h6>
+  <h1 style="font-size: 400%;">Template Options</h1>
+    <h2><i>Drawing? Pssh. I have no wish to draw blood. <br> — A frequent Template Hue-man.</i></h2>
   </div>
   <div class="container-fluid row my-row-1">
     <div class="col-6" style="margin-top: 50px;"><h3 style="text-align: center;"><strong>Flowers</strong></h3></div>
@@ -197,7 +198,7 @@
   </div>
 
 
-  <div style="text-align: center;"><a href="/coloring/new/interaction/one/"><button  class="button-1" style="text-align: center; position: center;"> <strong>I'm ready to color!</strong></button></a></div>
+  <div style="text-align: center;"><a href="/coloring/new/interaction/one/"><button  class="button-1" id="button-1" style="text-align: center; position: center;"> <strong>I'm ready to color!</strong></button></a></div>
 
 
 
@@ -335,7 +336,12 @@ function showDivs8(n) {
   x[slideIndex-1].style.display = "block";  
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
- 
+ var arr =document.getElementsByClassName("my-img");
+ for (var i=0; i<arr.length; i++){
+   arr[i].addEventListener("click",function(event){
+    document.getElementById("button-1").style.background = "green";
+   });
+ }
 </script>
 
 
