@@ -1,903 +1,344 @@
 <!--For Template_options page-->
 <!--Item 1: Template Options Heading, Home button on right-->
 <!--Item 2: 8 carousels with headings -->
-<!--Item 3: F/C choose mode -->
-<!--Item 4: Wind low medium high -->
-<!--Item 5: Precipitation low medium -->
-<!--Item 6: Save my Lazy Settings button-->
+<!--Item 3:  -->
+<!--Item 4:  -->
+<!--Item 5:  -->
+<!--Item 6:  -->
+<!----{% load static %}-->
+{% load static %}
 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  	<title>P3 Coloring</title>
-	
+    <title>Template Options</title>
+   
+ 
   <!----<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">-->
-  
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Poiret+One&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
 
-  <style type="text/css">
-    body {
-		 font-family: 'Inder', sans-serif;
-		 margin: 0;
-		 background-color: #B2F3F3;
-	}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-	.header {
-		padding   : 40px;
-    margin-left: -220px;
-    margin-right: -220px;
-		text-align: center;
-		background: #059DC0;
-		color: white;
-		font-size: 30px;
-		box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
-	}
-	.content {
-		padding:20px;
-		text-align: center;
-	}
-    .my-container{
-        display: inline-block;
-        padding-left: 120px;
-    }
-    
-    .my-container-2{
-        display: inline-block;
-        padding-left: 120px;
+  <style>
+    head{
+
     }
 
-    .my-container-3{
-        display: inline-block;
-        padding-left: 120px;
+    h1, h6{
+      text-align: center;
+    }
+    html, body{
+      height: 100%;
+      background: #B2F3F3;
+      max-width: 37.5rem;
+      margin: 0 auto;
+      padding: 0%;
+      font-family: 'Lato', sans-serif;
+
     }
 
-    @keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
-
-body {
-  max-width: 37.5rem;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  font-family: 'Lato', sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  scrollbar-color: transparent transparent; /* thumb and track color */
-  scrollbar-width: 0px;
-}
-
-*::-webkit-scrollbar {
-  width: 0;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: transparent;
-  border: none;
-}
-
-* {
-  -ms-overflow-style: none;
-}
-
-ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
-  padding-left: 50px;
-}
-
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  background-color: #f99;
-  counter-increment: item;
-}
-
-.carousel__slide:nth-child(even) {
-  background-color: #99f;
-}
-
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: #fff;
-  font-size: 2em;
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
-
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
-}
-
-.carousel__navigation-button {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #333;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
-  border-radius: 50%;
-  font-size: 0;
-  transition: transform 0.1s;
-}
-
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
-}
-
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-}
-
-.carousel::after,
-.carousel__next {
-  right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-color: #333;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-}
-
-.carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.button1 {
-  background-color: #57029c; /* Green */
-  border: none;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 40px;
-  margin: 6px 40px;
-  cursor: pointer;
-  border-radius: 50px;
-  box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
-  width: 500px;
-}
-.button1:hover {
-    color: rgb(59, 199, 113);
-}
-
-
+    .button-1{
+      background-color: #57029c; /* Green */
+      border: none;
+      color: white;
+      padding: 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 40px;
+      margin: 6px 40px;
+      cursor: pointer;
+      border-radius: 50px;
+      box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+      width: 500px;
+    }
+    .my-row-1{
+      margin-bottom: 5%;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 0%;
+      padding: 0%;
+      height: 14%;
+    }
+    .my-row-2{
+      margin-bottom: 5%;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 0%;
+      padding: 0%;
+      height: 14%;
+    }
+    .my-row-3{
+      margin-bottom: 5%;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 0%;
+      padding: 0%;
+      height: 14%;
+    }
+    .my-row-4{
+      margin-bottom: 5%;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 0%;
+      padding: 0%;
+      height: 14%;
+    }
+    .mySlides-1{
+      display: none;
+    }
+    .mySlides-2{
+      display: none;
+    }
+    .mySlides-3{
+      display: none;
+    }
+    .mySlides-4{
+      display: none;
+    }
+    .mySlides-5{
+      display: none;
+    }
+    .mySlides-6{
+      display: none;
+    }
+    .mySlides-7{
+      display: none;
+    }
+    .mySlides-8{
+      display: none;
+    }
   </style>
-  
+ 
 </head>
 
 <body>
   <div class="header">
-      <!--home icon -->
-      <li>  <span style="font-size: 2em; color: black;padding-left: 830px; ">
-        <a href="/coloring/index/" ><i class="fas fa-home"></i></a>
-        </span> </li>
-
-		<h1>Templates  </h1>
-    <p><i> Drawing? Pssh. I have no wish to draw blood. <br>  - A Frequent Template Hue-man </i></p>
-	  </div>
-
-    <br>
-    <br>
-	
-        <div class="container-fluid my-container">
-                 <div class="col" style="flex-grow: 1; text-align: center; font-size: 60px;">
-                    Flowers
-                    <section class="carousel" aria-label="Gallery">
-                            <ol class="carousel__viewport"> 
-                              <li id="carousel__slide1"
-                                  tabindex="0"
-                                  class="carousel__slide"> 
-                                <div onclick="location.href='/coloring/new/interaction/'" class="carousel__snapper"> 
-                                  <a href="#carousel__slide4"
-                                     class="carousel__prev">Go to last slide</a> <img src="https://i.pinimg.com/736x/22/ae/b0/22aeb0f180679c3477329ce2dd75594b.jpg" alt="First slide" style= "width: 170px; height:230px">
-                                  <a href="#carousel__slide2"
-                                     class="carousel__next">Go to next slide</a>
-                                </div>
-                              </li>
-                              <li id="carousel__slide2"
-                                  tabindex="0"
-                                  class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <a href="#carousel__slide1"
-                                   class="carousel__prev">Go to previous slide</a>
-                                <a href="#carousel__slide3"
-                                   class="carousel__next">Go to next slide</a>
-                              </li>
-                              <li id="carousel__slide3"
-                                  tabindex="0"
-                                  class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <a href="#carousel__slide2"
-                                   class="carousel__prev">Go to previous slide</a>
-                                <a href="#carousel__slide4"
-                                   class="carousel__next">Go to next slide</a>
-                              </li>
-                              <li id="carousel__slide4"
-                                  tabindex="0"
-                                  class="carousel__slide">
-                                <div class="carousel__snapper"></div>
-                                <a href="#carousel__slide3"
-                                   class="carousel__prev">Go to previous slide</a>
-                                <a href="#carousel__slide1"
-                                   class="carousel__next">Go to first slide</a>
-                              </li>
-                            </ol>
-                            <aside class="carousel__navigation">
-                              <ol class="carousel__navigation-list">
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel__slide1"
-                                     class="carousel__navigation-button">Go to slide 1</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel__slide2"
-                                     class="carousel__navigation-button">Go to slide 2</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel__slide3"
-                                     class="carousel__navigation-button">Go to slide 3</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel__slide4"
-                                     class="carousel__navigation-button">Go to slide 4</a>
-                                </li>
-                              </ol>
-                            </aside>
-                          </section>
-                 </div>
-                 <br>
-                 <br>
-
-                 <div class="col" style="flex-grow: 1; text-align: center ; font-size: 60px">
-                    Landmarks
-
-                    <section class="carousel" aria-label="Gallery" >
-                      <ol class="carousel__viewport">
-                        <li id="carousel__slide1"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper">
-                            <a href="#carousel__slide4"
-                               class="carousel__prev">Go to last slide</a> <img src="https://coloringonly.com/images/imgcolor/1542941539-malvorlage-oper-sydney.png" alt="First slide" style= "width: 170px; height:230px">
-                            <a href="#carousel__slide2"
-                               class="carousel__next">Go to next slide</a>
-                          </div>
-                        </li>
-                        <li id="carousel__slide2"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide1"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide3"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide3"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide2"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide4"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide4"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide3"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide1"
-                             class="carousel__next">Go to first slide</a>
-                        </li>
-                      </ol>
-                      <aside class="carousel__navigation">
-                        <ol class="carousel__navigation-list">
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide1"
-                               class="carousel__navigation-button">Go to slide 1</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide2"
-                               class="carousel__navigation-button">Go to slide 2</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide3"
-                               class="carousel__navigation-button">Go to slide 3</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide4"
-                               class="carousel__navigation-button">Go to slide 4</a>
-                          </li>
-                        </ol>
-                      </aside>
-                    </section>
-                </div>
-            </div>
-            <br>
+  <li> <span style="font-size: 2em; color: black;padding-left: 830px; "> <a href="/coloring/index/" ><i class="fas fa-home"></i></a> </span> </li>
+  <h1>Template Options</h1>
+    <h6><i>Drawing? Pssh. I have no wish to draw blood. <br> — A frequent Template Hue-man.</i></h6>
+  </div>
+  <div class="container-fluid row my-row-1">
+    <div class="col-6" style="margin-top: 50px;"><h3 style="text-align: center;"><strong>Flowers</strong></h3></div>
+    <div class="col-6" style="margin-top: 50px;"><h3 style="text-align: center;"><strong>Landmarks</strong></h3></div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-1" src="/static/coloring/images/flower1.jpg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-1" src="/static/coloring/images/flower2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-1" src="/static/coloring/images/flower3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-2" src="/static/coloring/images/land1.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-2" src="/static/coloring/images/land2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-2" src="/static/coloring/images/land3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs2(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs2(1)">&#10095;</button>
+    </div>
+  </div>
+  <div class="container-fluid row my-row-2">
+    <div class="col-6"><h3 style="text-align: center;"><strong>Geometric</strong></h3></div>
+    <div class="col-6"><h3 style="text-align: center;"><strong>Mandala</strong></h3></div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-3" src="/static/coloring/images/geom1.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-3" src="/static/coloring/images/geom2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-3" src="/static/coloring/images/geom3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs3(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs3(1)">&#10095;</button>
+    </div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-4" src="/static/coloring/images/mandala2.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-4" src="/static/coloring/images/mandala-freepik.svg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-4" src="/static/coloring/images/mandala4.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs4(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs4(1)">&#10095;</button>
+    </div>
+  </div>
+  <div class="container-fluid row my-row-3">
+    <div class="col-6"><h3 style="text-align: center;"><strong>Oceans</strong></h3></div>
+    <div class="col-6"><h3 style="text-align: center;"><strong>City Life</strong></h3></div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-5" src="/static/coloring/images/ocean1.png" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-5" src="/static/coloring/images/ocean2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-5" src="/static/coloring/images/ocean3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs5(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs5(1)">&#10095;</button>
+    </div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-6" src="/static/coloring/images/city1.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-6" src="/static/coloring/images/city2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-6" src="/static/coloring/images/city3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs6(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs6(1)">&#10095;</button>
+    </div>
+  </div>
+  <div class="container-fluid row my-row-4">
+    <div class="col-6"><h3 style="text-align: center;"><strong>Animals</strong></h3></div>
+    <div class="col-6"><h3 style="text-align: center;"><strong>Intricate</strong></h3></div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-7" src="/static/coloring/images/animal1.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-7" src="/static/coloring/images/animal2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-7" src="/static/coloring/images/animal3.gif" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs7(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs7(1)">&#10095;</button>
+    </div>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <img class="my-img mySlides-8" src="/static/coloring/images/intricate1.jpeg" style="max-width: 80%; height: 8vh;">
+      <img class="my-img mySlides-8" src="/static/coloring/images/intricate2.jpeg" style="max-width: 100%; height: 8vh;">
+      <img class="my-img mySlides-8" src="/static/coloring/images/intricate3.jpeg" style="max-width: 100%; height: 8vh;">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs8(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs8(1)">&#10095;</button>
+    </div>
+  </div>
 
 
-        <div class="container-fluid my-container-2">
-                 <div class="col" style="flex-grow: 1; text-align: center; font-size: 50px">
-                    <h3>Geometric</h3>
-
-                    <section class="carousel" aria-label="Gallery">
-                      <ol class="carousel__viewport">
-                        <li id="carousel__slide1"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper">
-                            <a href="#carousel__slide4"
-                               class="carousel__prev">Go to last slide</a> <img src="https://i.pinimg.com/originals/a4/88/14/a488149dca2afd7b3ca7f96ae17f8210.jpg" alt="First slide" style= "width: 170px; height:200px">
-                            <a href="#carousel__slide2"
-                               class="carousel__next">Go to next slide</a>
-                          </div>
-                        </li>
-                        <li id="carousel__slide2"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide1"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide3"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide3"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide2"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide4"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide4"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide3"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide1"
-                             class="carousel__next">Go to first slide</a>
-                        </li>
-                      </ol>
-                      <aside class="carousel__navigation">
-                        <ol class="carousel__navigation-list">
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide1"
-                               class="carousel__navigation-button">Go to slide 1</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide2"
-                               class="carousel__navigation-button">Go to slide 2</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide3"
-                               class="carousel__navigation-button">Go to slide 3</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide4"
-                               class="carousel__navigation-button">Go to slide 4</a>
-                          </li>
-                        </ol>
-                      </aside>
-                    </section>
-                 </div>
-
-
-                 <br>
-                 <br>
-
-                 <div class="col" style="flex-grow: 1; text-align: center; font-size: 50px">
-                    Mandala
-
-                    <section class="carousel" aria-label="Gallery">
-                      <ol class="carousel__viewport">
-                        <li id="carousel__slide1"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper">
-                            <a href="#carousel__slide4"
-                               class="carousel__prev">Go to last slide</a> <img src="https://s.mondaymandala.com/i/m/t/ancient-blossom.png" alt="First slide" style= "width: 170px; height:200px">
-                            <a href="#carousel__slide2"
-                               class="carousel__next">Go to next slide</a>
-                          </div>
-                        </li>
-                        <li id="carousel__slide2"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide1"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide3"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide3"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide2"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide4"
-                             class="carousel__next">Go to next slide</a>
-                        </li>
-                        <li id="carousel__slide4"
-                            tabindex="0"
-                            class="carousel__slide">
-                          <div class="carousel__snapper"></div>
-                          <a href="#carousel__slide3"
-                             class="carousel__prev">Go to previous slide</a>
-                          <a href="#carousel__slide1"
-                             class="carousel__next">Go to first slide</a>
-                        </li>
-                      </ol>
-                      <aside class="carousel__navigation">
-                        <ol class="carousel__navigation-list">
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide1"
-                               class="carousel__navigation-button">Go to slide 1</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide2"
-                               class="carousel__navigation-button">Go to slide 2</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide3"
-                               class="carousel__navigation-button">Go to slide 3</a>
-                          </li>
-                          <li class="carousel__navigation-item">
-                            <a href="#carousel__slide4"
-                               class="carousel__navigation-button">Go to slide 4</a>
-                          </li>
-                        </ol>
-                      </aside>
-                    </section>
-                </div>
-
-        </div>
-        <br><br> <br>
-                 <br>
-
-            
-        <div class="container-fluid my-container-3">
-                <div class="col" style="flex-grow: 1; text-align: center ; font-size: 80px">
-                   Oceans
-
-                   <section class="carousel" aria-label="Gallery">
-                    <ol class="carousel__viewport">
-                      <li id="carousel__slide1"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper">
-                          <a href="#carousel__slide4"
-                             class="carousel__prev">Go to last slide</a>   <img src="https://www.bestcoloringpagesforkids.com/wp-content/uploads/2013/07/Ocean-Wave-Coloring-Page.jpg" alt="First slide" style= "width: 190px; height:200px">
-                          <a href="#carousel__slide2"
-                             class="carousel__next">Go to next slide</a>
-                        </div>
-                      </li>
-                      <li id="carousel__slide2"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide1"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide3"
-                           class="carousel__next">Go to next slide</a>
-                      </li>
-                      <li id="carousel__slide3"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide2"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide4"
-                           class="carousel__next">Go to next slide</a>
-                      </li>
-                      <li id="carousel__slide4"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide3"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide1"
-                           class="carousel__next">Go to first slide</a>
-                      </li>
-                    </ol>
-                    <aside class="carousel__navigation">
-                      <ol class="carousel__navigation-list">
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide1"
-                             class="carousel__navigation-button">Go to slide 1</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide2"
-                             class="carousel__navigation-button">Go to slide 2</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide3"
-                             class="carousel__navigation-button">Go to slide 3</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide4"
-                             class="carousel__navigation-button">Go to slide 4</a>
-                        </li>
-                      </ol>
-                    </aside>
-                  </section>
-                </div>
-
-                <br>
-                <br>
-                <div class="col" style="flex-grow: 1; text-align: center; font-size: 80px">
-                   City Life
-
-                   <section class="carousel" aria-label="Gallery">
-                    <ol class="carousel__viewport">
-                      <li id="carousel__slide1"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper">
-                          <a href="#carousel__slide4"
-                             class="carousel__prev">Go to last slide</a> <img src="https://www.bestcoloringpagesforkids.com/wp-content/uploads/2019/04/New-York-City-Coloring-Pages.jpg" alt="First slide" style= "width: 190px; height:200px">
-                          <a href="#carousel__slide2"
-                             class="carousel__next">Go to next slide</a>
-                        </div>
-                      </li>
-                      <li id="carousel__slide2"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide1"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide3"
-                           class="carousel__next">Go to next slide</a>
-                      </li>
-                      <li id="carousel__slide3"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide2"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide4"
-                           class="carousel__next">Go to next slide</a>
-                      </li>
-                      <li id="carousel__slide4"
-                          tabindex="0"
-                          class="carousel__slide">
-                        <div class="carousel__snapper"></div>
-                        <a href="#carousel__slide3"
-                           class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide1"
-                           class="carousel__next">Go to first slide</a>
-                      </li>
-                    </ol>
-                    <aside class="carousel__navigation">
-                      <ol class="carousel__navigation-list">
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide1"
-                             class="carousel__navigation-button">Go to slide 1</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide2"
-                             class="carousel__navigation-button">Go to slide 2</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide3"
-                             class="carousel__navigation-button">Go to slide 3</a>
-                        </li>
-                        <li class="carousel__navigation-item">
-                          <a href="#carousel__slide4"
-                             class="carousel__navigation-button">Go to slide 4</a>
-                        </li>
-                      </ol>
-                    </aside>
-                  </section>
-               </div>
-
-       </div>
-       <br><br>  <br>
-       <br>
-
-           
-       <div class="container-fluid my-container-3">
-            <div class="col" style="flex-grow: 1; text-align: center; font-size: 80px">
-               Animals
-
-               <section class="carousel" aria-label="Gallery">
-                <ol class="carousel__viewport">
-                  <li id="carousel__slide1"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper">
-                      <a href="#carousel__slide4"
-                         class="carousel__prev">Go to last slide</a> <img src="https://iheartcraftythings.com/wp-content/uploads/2021/04/realistic-animals-03.jpg" alt="First slide" style= "width: 190px; height:200px">
-                      <a href="#carousel__slide2"
-                         class="carousel__next">Go to next slide</a>
-                    </div>
-                  </li>
-                  <li id="carousel__slide2"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide1"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide3"
-                       class="carousel__next">Go to next slide</a>
-                  </li>
-                  <li id="carousel__slide3"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide2"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide4"
-                       class="carousel__next">Go to next slide</a>
-                  </li>
-                  <li id="carousel__slide4"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide3"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide1"
-                       class="carousel__next">Go to first slide</a>
-                  </li>
-                </ol>
-                <aside class="carousel__navigation">
-                  <ol class="carousel__navigation-list">
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide1"
-                         class="carousel__navigation-button">Go to slide 1</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide2"
-                         class="carousel__navigation-button">Go to slide 2</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide3"
-                         class="carousel__navigation-button">Go to slide 3</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide4"
-                         class="carousel__navigation-button">Go to slide 4</a>
-                    </li>
-                  </ol>
-                </aside>
-              </section>
-            </div>
-
-            <br>
-            <br>
-            <div class="col" style="flex-grow: 1; text-align: center ; font-size: 80px">
-               Intricate
-
-               <section class="carousel" aria-label="Gallery">
-                <ol class="carousel__viewport">
-                  <li id="carousel__slide1"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper">
-                      <a href="#carousel__slide4"
-                         class="carousel__prev">Go to last slide</a>  <img src="https://coloringhome.com/coloring/Kcj/grB/KcjgrBAni.jpg" alt="First slide" style= "width: 190px; height:200px">
-                      <a href="#carousel__slide2"
-                         class="carousel__next">Go to next slide</a>
-                    </div>
-                  </li>
-                  <li id="carousel__slide2"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide1"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide3"
-                       class="carousel__next">Go to next slide</a>
-                  </li>
-                  <li id="carousel__slide3"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide2"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide4"
-                       class="carousel__next">Go to next slide</a>
-                  </li>
-                  <li id="carousel__slide4"
-                      tabindex="0"
-                      class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide3"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide1"
-                       class="carousel__next">Go to first slide</a>
-                  </li>
-                </ol>
-                <aside class="carousel__navigation">
-                  <ol class="carousel__navigation-list">
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide1"
-                         class="carousel__navigation-button">Go to slide 1</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide2"
-                         class="carousel__navigation-button">Go to slide 2</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide3"
-                         class="carousel__navigation-button">Go to slide 3</a>
-                    </li>
-                    <li class="carousel__navigation-item">
-                      <a href="#carousel__slide4"
-                         class="carousel__navigation-button">Go to slide 4</a>
-                    </li>
-                  </ol>
-                </aside>
-              </section>
-           </div>
-
-   </div>
-   <br><br>
-   <br><br>
-
-   <br><br>
+  <div style="text-align: center;"><a href="/coloring/new/interaction/one/"><button  class="button-1" style="text-align: center; position: center;"> <strong>I'm ready to color!</strong></button></a></div>
 
 
 
-   <button1 class="button1">Preview the cyantastic template chosen </button1>
-   <button1 onclick="location.href='/coloring/do/not/disturb/'" class="button1">I am ready to color!</button1>
+<script>
 
-   <br>
-   <br>
-   <br>
-  
-   
+/* Have different Javascript code for different buttons*/
 
-        
-            
-            
-            </body>
+var slideIndex = 1;
+showDivs(slideIndex);
+showDivs2(slideIndex);
+showDivs3(slideIndex);
+showDivs4(slideIndex);
+showDivs5(slideIndex);
+showDivs6(slideIndex);
+showDivs7(slideIndex);
+showDivs8(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-1");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs2(n) {
+  showDivs2(slideIndex += n);
+}
+
+function showDivs2(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-2");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs3(n) {
+  showDivs3(slideIndex += n);
+}
+
+function showDivs3(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-3");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs4(n) {
+  showDivs4(slideIndex += n);
+}
+
+function showDivs4(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-4");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs5(n) {
+  showDivs5(slideIndex += n);
+}
+
+function showDivs5(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-5");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs6(n) {
+  showDivs6(slideIndex += n);
+}
+
+function showDivs6(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-6");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs7(n) {
+  showDivs7(slideIndex += n);
+}
+
+function showDivs7(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-7");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function plusDivs8(n) {
+  showDivs8(slideIndex += n);
+}
+
+function showDivs8(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-8");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+ 
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
 </html>
